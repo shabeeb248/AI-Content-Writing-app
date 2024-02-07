@@ -1,0 +1,108 @@
+{
+    "query": {
+        "q": "mobile phones",
+        "location": "New York,New York,United States",
+        "url": "https://www.google.com/search?q=mobile+phones&oq=mobile+phones&uule=w+CAIQICIfTmV3IFlvcmssTmV3IFlvcmssVW5pdGVkIFN0YXRlcw&hl=en&gl=us&sourceid=chrome&ie=UTF-8"
+    },
+    "organic": [
+        {
+            "position": 1,
+            "title": "New Cell Phones for Sale | Buy Smartphones ...",
+            "url": "https://www.t-mobile.com/cell-phones",
+            "destination": "https://www.t-mobile.com › cell-phones",
+            "description": "Explore T-Mobile's selection of the latest cell phones and smartphones. Compare models, prices, and features from the most popular brands today!",
+            "isAmp": false
+        },
+        {
+            "position": 2,
+            "title": "Cell Phones: Smartphones and Mobile ... - Best Buy",
+            "url": "https://www.bestbuy.com/site/electronics/mobile-cell-phones/abcat0800000.c?id=abcat0800000",
+            "destination": "https://www.bestbuy.com › site › abcat0800000",
+            "description": "Shop Best Buy for cell phones. Text, call and search the web with mobile phones from popular brands. Browse our selection to find the best smartphone for ...",
+            "isAmp": false
+        },
+        {
+            "position": 3,
+            "title": "Unlocked Phones - Cheap Cell Phones",
+            "url": "https://www.usmobile.com/shop",
+            "destination": "https://www.usmobile.com › shop",
+            "description": "US Mobile is a prepaid carrier with the best cell phone plans and unlocked phones. The average monthly phone bill is $15. No contract or credit check ...",
+            "isAmp": false
+        },
+        {
+            "position": 4,
+            "title": "Mobile phone",
+            "url": "https://en.wikipedia.org/wiki/Mobile_phone",
+            "destination": "https://en.wikipedia.org › wiki › Mobile_phone",
+            "description": "A mobile phone (or cellphone) is a portable telephone that can make and receive calls over a radio frequency link while the user is moving within a ...",
+            "isAmp": false
+        },
+        {
+            "position": 5,
+            "title": "Mint Mobile Phones for Sale",
+            "url": "https://phones.mintmobile.com/",
+            "destination": "https://phones.mintmobile.com",
+            "description": "Buy a new phone or upgrade your current phone today at the Mint Mobile Phone Store. Get low monthly payments as low as 0% APR for up to 24 months.",
+            "isAmp": false
+        },
+        {
+            "position": 6,
+            "title": "Cell Phones, Unlocked & No - Walmart",
+            "url": "https://www.walmart.com/cp/cell-phones/1105910",
+            "destination": "https://www.walmart.com › cell-phones",
+            "description": "Looking for new cell phones? Shop for new cell phones, iPhones, unlocked phones, iPhone accessories, contract mobile phones and more Walmart.com.",
+            "isAmp": false
+        },
+        {
+            "position": 7,
+            "title": "Cell Phones: Shop the Top Smartphones Online",
+            "url": "https://www.verizon.com/smartphones/",
+            "destination": "https://www.verizon.com › smartphones",
+            "description": "At Verizon, you can browse your pick of smartphones and available deals on top brands, as well as explore the best cell phone service plans for your needs.",
+            "isAmp": false
+        },
+        {
+            "position": 8,
+            "title": "Phones | SimpleMobile",
+            "url": "https://shop.simplemobile.com/shop/en/simplemobile/phones",
+            "destination": "https://shop.simplemobile.com › shop › phones",
+            "description": "... Mobile Unlimited Mobile No Contract Cell Phone Plans. PHONES · PLANS ... phone catalog and see your EXCLUSIVE offers. Go to phones. UPGRADE YOUR PHONE. SORRY, You ...",
+            "isAmp": false
+        },
+        {
+            "position": 9,
+            "title": "See New Android Phones & Prices",
+            "url": "https://www.t-mobile.com/cell-phones/osy/android",
+            "destination": "https://www.t-mobile.com › cell-phones › osy › android",
+            "description": "Find the latest Android phones at T-Mobile, and compare different models, prices, features, and more. Get FREE SHIPPING on phones and devices with new ...",
+            "isAmp": false
+        }
+    ],
+    "related_searches": [
+        {
+            "title": "t-mobile phones",
+            "url": "https://www.google.com/search?sca_esv=a6fbe16d171ab0fd&hl=en&gl=us&q=T-Mobile+phones&sa=X&ved=2ahUKEwjKz_qWkJaEAxUyRaQEHYnrDWsQ1QJ6BQiGARAB"
+        },
+        {
+            "title": "10 uses of mobile phones",
+            "url": "https://www.google.com/search?sca_esv=a6fbe16d171ab0fd&hl=en&gl=us&q=10+uses+of+mobile+phones&sa=X&ved=2ahUKEwjKz_qWkJaEAxUyRaQEHYnrDWsQ1QJ6BQiIARAB"
+        },
+        {
+            "title": "history of mobile phones 1973 to 2017",
+            "url": "https://www.google.com/search?sca_esv=a6fbe16d171ab0fd&hl=en&gl=us&q=History+of+mobile+phones+1973+to+2017&sa=X&ved=2ahUKEwjKz_qWkJaEAxUyRaQEHYnrDWsQ1QJ6BQiKARAB"
+        },
+        {
+            "title": "us mobile phones",
+            "url": "https://www.google.com/search?sca_esv=a6fbe16d171ab0fd&hl=en&gl=us&q=US+Mobile+phones&sa=X&ved=2ahUKEwjKz_qWkJaEAxUyRaQEHYnrDWsQ1QJ6BQiHARAB"
+        },
+        {
+            "title": "who invented mobile phone in which year",
+            "url": "https://www.google.com/search?sca_esv=a6fbe16d171ab0fd&hl=en&gl=us&q=Who+invented+mobile+phone+in+which+year&sa=X&ved=2ahUKEwjKz_qWkJaEAxUyRaQEHYnrDWsQ1QJ6BQiDARAB"
+        },
+        {
+            "title": "unlocked mobile phones",
+            "url": "https://www.google.com/search?sca_esv=a6fbe16d171ab0fd&hl=en&gl=us&q=Unlocked+Mobile+phones&sa=X&ved=2ahUKEwjKz_qWkJaEAxUyRaQEHYnrDWsQ1QJ6BQiCARAB"
+        }
+    ],
+    "number_of_results": 1920000000
+}
