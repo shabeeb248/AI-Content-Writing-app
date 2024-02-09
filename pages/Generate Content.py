@@ -24,8 +24,6 @@ os.environ['OPENAI_API_KEY'] = "sk-4zg3egyqu0BTnSADN7CsT3BlbkFJYm9MzNjEZp66gpSZr
 #https://zenserp.com/thank-you-Free/
 client = openai
 
-
-
 if 'keyword_input' not in st.session_state:
   st.session_state["keyword_input"]=''
 
@@ -68,9 +66,6 @@ st.markdown("<h1 style='text-align: center; color: white;'>AI Content Creator Ap
 
 
 st.session_state["keyword_input"] = st.text_input("Enter a keyword")
-
-
-
 if not st.session_state["keyword_input"]:
         st.error("Please fill out the keyword field")
 else:
@@ -104,6 +99,7 @@ if st.session_state['google_keywords']:
             st.error("Please select multiple keywords")
     else:
         print('items selected')
+        # Input box add - Additional Instructions 
         if st.button('Generate Titles'):
           with st.spinner('Generating...'):
             print('submit btn clicked')
@@ -142,7 +138,7 @@ if st.session_state['subtitles']:
             deleteOutput("output")
             createFolders("output")
             add_image(st.session_state['final_title'])
-            st.session_state['blog']=generate_blog(st.session_state['final_title'], st.session_state['subtitles'])
+            st.session_state['blog'], introduction, conclusion=generate_blog(st.session_state['final_title'], st.session_state['subtitles'])
         
 blog_data = {
     'Title': st.session_state['final_title'],  # Assuming 'final_title' contains the title of the blog

@@ -40,6 +40,9 @@ You are article writer, you need to write arricle from given Main Title and also
 Main Title:{}
 Subtitle :{}
 
+Content Generated till now : 
+{}
+
 The output response should be a content for the above Subtitle, without any additional text before or after it:
 
 Output:
