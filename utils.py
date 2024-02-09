@@ -62,13 +62,13 @@ def createFolders(dir):
         ('Failed to create folders  Reason: %s' % ( e))
 
 
-def add_image(title):
-    try:
-        prompt = prompt_image.format(title)
-        res=generate_image_e_3(prompt,'img')
-        return res
-    except Exception as e:
-            print(f' Reason: {e}')
+# def add_image(title):
+#     try:
+#         prompt = prompt_image.format(title)
+#         res=generate_image_e_3(prompt,'img')
+#         return res
+#     except Exception as e:
+#             print(f' Reason: {e}')
 
 def generate_pdf(blog_data):
     print('generate pdf')
@@ -140,9 +140,9 @@ def generate_pdf(blog_data):
     story.append(Spacer(1, 1*inch))
     paragraph = Paragraph(text, title_style)
     story.append(paragraph)
-    image_path = f"output/img.jpg"
-    image = Image(image_path, width=350, height=350)  # Adjust the width and height as needed
-    story.append(image)
+    # image_path = f"output/img.jpg"
+    # image = Image(image_path, width=350, height=350)  # Adjust the width and height as needed
+    # story.append(image)
     story.append(PageBreak())
     
 
@@ -174,50 +174,68 @@ def create_subtitles(title):
         return result_list
     except Exception as e:
             print(f' Reason: {e}')
-def create_content_for_subtitles(title,subtitle,history):
+def create_content_for_subtitles(subtitle):
     try:
-        prompt = prompt_content.format(title,subtitle,history)
+        prompt = prompt_content.format(subtitle)
         res=get_response_from_openai_gpt3_5(prompt)
         print(res)
         return res
     except Exception as e:
             print(f' Reason: {e}')
+
+# with history            
+# def create_content_for_subtitles(title,subtitle,history):
+#     try:
+#         prompt = prompt_content.format(title,subtitle,history)
+#         res=get_response_from_openai_gpt3_5(prompt)
+#         print(res)
+#         return res
+#     except Exception as e:
+#             print(f' Reason: {e}')
     
 
-def generate_blog(title,subtitles):
+def generate_blog(subtitles):
     content = []
-    introduction = "introduction" # Create introduction from openai
-    history = """
-    Title: {title}
-
-    {introduction}
-    """
     for i in subtitles:
-        blog = create_content_for_subtitles(title,i,history)
+        blog = create_content_for_subtitles(i)
         x = { 'subtitle':i, 'text':blog}
-        history = history + "\n\n" + i + "\n\n" + blog + "\n\n"
         content.append(x)
-    conclusion = "conclusion"
-    return content, introduction, conclusion
+    return content
+
+# with history
+    # content = []
+    # introduction = "introduction" # Create introduction from openai
+    # history = """
+    # Title: {title}
+
+    # {introduction}
+    # """
+    # for i in subtitles:
+    #     blog = create_content_for_subtitles(title,i,history)
+    #     x = { 'subtitle':i, 'text':blog}
+    #     history = history + "\n\n" + i + "\n\n" + blog + "\n\n"
+    #     content.append(x)
+    # conclusion = "conclusion"
+    # return content, introduction, conclusion
     
 
 
 
-def generate_image_e_3(prompt_in,file_name):
-    response = client.images.generate(
-    model="dall-e-3",
-    prompt=prompt_in,
-    size='1024x1024',
-    quality='standard',
-    style='vivid',
-    n=1,
-    )
+# def generate_image_e_3(prompt_in,file_name):
+#     response = client.images.generate(
+#     model="dall-e-3",
+#     prompt=prompt_in,
+#     size='1024x1024',
+#     quality='standard',
+#     style='vivid',
+#     n=1,
+#     )
 
-    image_url = response.data[0].url
-    time.sleep(2)
-    img_data = requests.get(image_url).content
-    with open('output/'+file_name+'.jpg', 'wb') as handler:
-        handler.write(img_data)
+#     image_url = response.data[0].url
+#     time.sleep(2)
+#     img_data = requests.get(image_url).content
+#     with open('output/'+file_name+'.jpg', 'wb') as handler:
+#         handler.write(img_data)
 
 def get_response_from_openai_gpt3_5(prompt_in):
   try:
@@ -281,7 +299,7 @@ def get_titles_based_on_keyword(prompt_in,main_key,sub_key):
 
 def get_google_serach(key_word):
     headers = { 
-    "apikey": "c200c400-c4b8-11ee-b984-31f4e259c81c"}
+    "apikey": "007721a0-c73e-11ee-a13b-01bde3732e95"}
 
     params = (
     ("q",key_word),

@@ -74,8 +74,6 @@ else:
         print('getting google search')
         data=get_google_serach(st.session_state["keyword_input"])
         data = json.loads(data)
-        # print(data)
-
         google_keywords=[]
         for item in data['organic']:
             if 'title' in item:
