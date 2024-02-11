@@ -18,6 +18,7 @@ import json
 from prompts import *
 from utils import *
 
+
 openai.api_key = "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"
 os.environ['OPENAI_API_KEY'] = "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"
 
@@ -147,9 +148,9 @@ with tab1:
             
             st.session_state['google_keywords'].extend(list(dict.fromkeys(google_keywords)))
             print("GOOGLE KEYWORDS", st.session_state['google_keywords'])
-            if(data):
+            if(data) and not st.session_state.get('unblocked_tab2_1', False):
                 unblock(2)
-                st.write("Go to tab 2")
+                st.session_state['unblocked_tab2_1'] = True
         if st.button('Add Your Search Words'):
             st.session_state['manual_input_visible'] = True
         if st.session_state['manual_input_visible']:
@@ -159,8 +160,11 @@ with tab1:
                     st.session_state['google_keywords'] = []
                 st.session_state['google_keywords'].append(st.session_state['manual_input'])
                 st.success(f"Keyword '{st.session_state['manual_input']}' added")
-                if st.session_state['google_keywords']:  
+                if st.session_state['google_keywords'] and not st.session_state.get('unblocked_tab2_2', False):  
                     unblock(2)
+                    st.session_state['unblocked_tab2_2'] = True
+    if st.session_state.get('unblocked_tab2_1', False) or st.session_state.get('unblocked_tab2_2', False):
+        st.markdown("<h3 style='color:blue; txt-align:center; '>Go to tab 2</h3>", unsafe_allow_html=True)
                
         
 
@@ -198,6 +202,9 @@ if not st.session_state['blocked_tab3']:
     with tab3:
         st.title("Step 3: Choose title")
         if st.session_state['titles_10']:
+            if st.button('Regenerate Titles'):
+                with st.spinner('Generating...'):
+                    titles_10=get_titles_based_on_keyword(prompt_1,st.session_state["keyword_input"],st.session_state['selected_items'],additional_info)
             print(st.session_state['titles_10'])
             st.session_state['final_title']=st.radio('Choose a title: ', options=st.session_state['titles_10'], key='radio_title')
         if st.session_state['final_title']:
