@@ -27,6 +27,9 @@ client = openai
 if 'keyword_input' not in st.session_state:
   st.session_state["keyword_input"]=''
 
+if 'manual_input' not in st.session_state:
+  st.session_state["manual_input"]=''
+
 if 'final_title' not in st.session_state:
   st.session_state["final_title"]=''
 
@@ -112,9 +115,10 @@ with tab1:
                 unblock(2)
                 st.write("Go to tab 2")
         if st.button('Add Your Search Words'):
+            st.session_state["manual_input"]= st.text_input("Enter your search words here")
             if 'google_keywords' not in st.session_state:
                 st.session_state['google_keywords'] = []
-            st.session_state['google_keywords'].append(st.session_state['keyword_input'])
+            st.session_state['google_keywords'].append(st.session_state['manual_input'])
             st.success(f"Keyword '{st.session_state['keyword_input']}' added")
             if st.session_state['google_keywords']:  
                 unblock(2)
