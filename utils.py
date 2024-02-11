@@ -35,6 +35,9 @@ import string
 
 client = openai
 
+openai.api_key = "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"
+os.environ['OPENAI_API_KEY'] = "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"
+
 def randomString():
     N = 5
     return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
@@ -159,12 +162,12 @@ def generate_pdf(blog_data):
     return ("PDF created successfully")
 
 
-def create_subtitles(title):
+def create_subtitles(title,additional_info):
     try:
         # subtitles = ['intro','section a - the beginning','section b - the middle','section c - the end','conclusion']
         # # //return  subtitles in random order
         # return random.sample(subtitles, len(subtitles))
-        prompt = prompt_subtitle.format(title)
+        prompt = prompt_subtitle.format(title, additional_info)
         res=get_response_from_openai_gpt3_5(prompt)
         print(res)
         start_index = res.find('[') + 1  
@@ -174,9 +177,9 @@ def create_subtitles(title):
         return result_list
     except Exception as e:
             print(f' Reason: {e}')
-def create_content_for_subtitles(subtitle):
+def create_content_for_subtitles(subtitle, additional_info):
     try:
-        prompt = prompt_content.format(subtitle)
+        prompt = prompt_content.format(subtitle, additional_info)
         res=get_response_from_openai_gpt3_5(prompt)
         print(res)
         return res
@@ -194,10 +197,10 @@ def create_content_for_subtitles(subtitle):
 #             print(f' Reason: {e}')
     
 
-def generate_blog(subtitles):
+def generate_blog(subtitles,additional_info):
     content = []
     for i in subtitles:
-        blog = create_content_for_subtitles(i)
+        blog = create_content_for_subtitles(i,additional_info)
         x = { 'subtitle':i, 'text':blog}
         content.append(x)
     return content
@@ -283,11 +286,11 @@ def get_response_from_openai_gpt4(prompt_in):
   except Exception as e:
     print(e)
 
-def get_titles_based_on_keyword(prompt_in,main_key,sub_key):
+def get_titles_based_on_keyword(prompt_in,main_key,sub_key,additional_info):
     try:
-        prompt_final=prompt_in.format(main_key,sub_key)
+        prompt_final=prompt_in.format(main_key,sub_key,additional_info)
         res=get_response_from_openai_gpt4(prompt_final)
-        print(res)
+        print(res, 'this is the response from openai in get title function')
         start_index = res.find('[') + 1  
         end_index = res.find(']')
         list_str = res[start_index:end_index]

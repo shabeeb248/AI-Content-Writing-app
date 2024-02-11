@@ -18,6 +18,12 @@ import json
 from prompts import *
 from utils import *
 
+openai.api_key = "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"
+os.environ['OPENAI_API_KEY'] = "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"
+
+
+client = openai
+
 if 'keyword_input' not in st.session_state:
   st.session_state["keyword_input"]=''
 
@@ -82,7 +88,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["Step1", "Step 2", "Step 3", "Step 4", "
 
 with tab1:
     st.title('Step1 : Enter your keyword')
-    st.session_state["keyword_input"] = st.text_input("Enter a keyword")
+    st.session_state["keyword_input"] = st.text_input("Enter a keyword", key="search_keyword")
     if not st.session_state["keyword_input"]:
             st.error("Please fill out the keyword field")
     else:
@@ -102,17 +108,17 @@ with tab1:
             
             st.session_state['google_keywords'] = list(dict.fromkeys(google_keywords))
             print("GOOGLE KEYWORDS", st.session_state['google_keywords'])
-    # st.title("Step 1: Generate Titles")
-    # st.write("Enter the main keyword and supporting keywords to generate titles")
-    # main_keyword = st.text_input("Main Keyword")
-    # if st.button("Generate Titles",key='btn1'):
-    #     with st.spinner('Generating Titles...'):
-    #         title = generate_title()
-    #         # titles = generate_titles(main_keyword, supporting_keywords)
-    #         st.write(title)
             if(data):
                 unblock(2)
                 st.write("Go to tab 2")
+        if st.button('Add Your Search Words'):
+            if 'google_keywords' not in st.session_state:
+                st.session_state['google_keywords'] = []
+            st.session_state['google_keywords'].append(st.session_state['keyword_input'])
+            st.success(f"Keyword '{st.session_state['keyword_input']}' added")
+            if st.session_state['google_keywords']:  
+                unblock(2)
+               
         
 
     
@@ -124,16 +130,20 @@ if not st.session_state['blocked_tab2']:
         if st.session_state['google_keywords']:
             for item in st.session_state['google_keywords']:
                 if st.checkbox(item, key='keyword-'+item):
+                    if 'selected_items' not in st.session_state:
+                        st.session_state['selected_items'] = []
                     st.session_state['selected_items'].append(item)
         if not st.session_state['selected_items']:
                 st.error("Please select multiple keywords")
         else:
+            additional_info = st.text_area("Additional Info:", "Enter any additional information for generating the title here.")
+       
             print('items selected')
             # Input box add - Additional Instructions 
             if st.button('Generate Titles'):
                 with st.spinner('Generating...'):
                     print('submit btn clicked')
-                    titles_10=get_titles_based_on_keyword(prompt_1,st.session_state["keyword_input"],st.session_state['selected_items'])
+                    titles_10=get_titles_based_on_keyword(prompt_1,st.session_state["keyword_input"],st.session_state['selected_items'],additional_info)
                     if isinstance(titles_10, list):
                         st.session_state['titles_10']=titles_10
                     if(titles_10):
@@ -145,12 +155,14 @@ if not st.session_state['blocked_tab3']:
     with tab3:
         st.title("Step 3: Choose title")
         if st.session_state['titles_10']:
+            print(st.session_state['titles_10'])
             st.session_state['final_title']=st.radio('Choose a title: ', options=st.session_state['titles_10'], key='radio_title')
         if st.session_state['final_title']:
+            additional_info_subtitles = st.text_area("Additional Info:", "Enter any additional information for generating the subtitles here.")
             # btn_name = 'Generate New Subtitles' if st.session_state['subtitles'] else 'Generate Subtitles'
             if st.button('Generate Subtitles', key='generate_subtitles_button'):
                 with st.spinner('Generating...'):
-                    st.session_state['subtitles']=create_subtitles(st.session_state['final_title'])
+                    st.session_state['subtitles']=create_subtitles(st.session_state['final_title'], additional_info_subtitles)
                     if(st.session_state['subtitles']):
                         unblock(4)
                         st.write('go to tab4')
@@ -161,22 +173,23 @@ if not st.session_state['blocked_tab4']:
         if (st.session_state['subtitles']):
             if st.button('Generate new subtitles' , key='regenerate_subtitles'):
                 with st.spinner('Generating...'):
-                    st.session_state['subtitles']=create_subtitles(st.session_state['final_title'])
+                    st.session_state['subtitles']=create_subtitles(st.session_state['final_title'], additional_info_subtitles)
             for i in st.session_state['subtitles']:
                 st.write(i)
+            additional_info_blog = st.text_area("Additional Info:", "Enter any additional information for generating the blog here.")
             if st.button('Generate Blog'):  
                 with st.spinner('Generating...'):
                     deleteOutput("output")
                     createFolders("output")
                     # add_image(st.session_state['final_title'])
-                    st.session_state['blog']=generate_blog(st.session_state['subtitles'])
+                    st.session_state['blog']=generate_blog(st.session_state['subtitles'], additional_info_blog)
                     if(st.session_state['blog']):
                         unblock(5)
                         st.write('go to the last tab')
 
 if not st.session_state['blocked_tab5']:
     with tab5:
-        st.title('Last Step : Gnerate Blog')
+        st.title('Last Step : Generate Blog')
         if st.session_state['subtitles']:
             if st.button('Regenerate Blog', key='regenerate_blog_button'):  
                 with st.spinner('Generating...'):
