@@ -73,8 +73,18 @@ else:
       with st.spinner('Generating...'):
         print('getting google search')
         data=get_google_serach(st.session_state["keyword_input"])
-        data = json.loads(data)
+        # data = json.loads(data)
         google_keywords=[]
+        main_categories = ['related_searches', 'related_questions','organic_results']
+        #checkbox to select categories
+        for category in main_categories:
+            if st.checkbox(category, key=category):
+                for item in data[category]:
+                    if 'title' in item:
+                        google_keywords.append(item['title'])
+                    if 'query' in item:
+                        google_keywords.append(item['query'])
+        
         for item in data['organic']:
             if 'title' in item:
                 google_keywords.append(item['title'])

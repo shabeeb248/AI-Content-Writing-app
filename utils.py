@@ -32,6 +32,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, PageTemplate, Image
 from reportlab.lib.styles import getSampleStyleSheet
 from prompts import *
 import string
+from serpapi import GoogleSearch
 
 client = openai
 
@@ -305,13 +306,37 @@ def get_titles_based_on_keyword(prompt_in,main_key,sub_key,additional_info):
     except:
         return "open ai error"
 
+# def get_google_serach(key_word):
+#     headers = { 
+#     "apikey": "007721a0-c73e-11ee-a13b-01bde3732e95"}
+
+#     params = (
+#     ("q",key_word),
+#     ("location","New York,New York,United States"),)
+
+#     response = requests.get('https://app.zenserp.com/api/v2/search', headers=headers, params=params)
+#     return response.text
+
 def get_google_serach(key_word):
-    headers = { 
-    "apikey": "007721a0-c73e-11ee-a13b-01bde3732e95"}
+    SERP_API_KEY='bb5c2b646e709f4c63176fcae522be2cf04b2f5394b579e70f8615797171a2de'
 
-    params = (
-    ("q",key_word),
-    ("location","New York,New York,United States"),)
+    params = {
+    "engine": "google",
+    "q": key_word,
+    "api_key": SERP_API_KEY
+    }
 
-    response = requests.get('https://app.zenserp.com/api/v2/search', headers=headers, params=params)
-    return response.text
+    results = GoogleSearch(params)
+    # print(search)
+    # results = search
+    results =results.get_dict()
+    # save the results to a file
+    # with open('results.json', 'w') as f:
+    #     json.dump(results, f)
+    # make results a dictionary
+    # results = json.loads(results)
+    # print(results.keys())
+    organic_results = results["organic_results"]
+    # print(organic_results)
+
+    return results
