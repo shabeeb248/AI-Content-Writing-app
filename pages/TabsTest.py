@@ -76,6 +76,9 @@ if 'blocked_tab5' not in st.session_state:
 if 'isDisabled_btn1' not in st.session_state:
     st.session_state['isDisabled_btn1'] = False
 
+if 'additional_info_blog' not in st.session_state:
+    st.session_state['additional_info_blog'] = ''
+
 def unblock(tab):
     st.session_state['blocked_tab' + str(tab)] = False
 
@@ -177,12 +180,17 @@ if not st.session_state['blocked_tab4']:
             for i in st.session_state['subtitles']:
                 st.write(i)
             additional_info_blog = st.text_area("Additional Info:", "Enter any additional information for generating the blog here.")
+            st.session_state['additional_info_blog'] = additional_info_blog
             if st.button('Generate Blog'):  
                 with st.spinner('Generating...'):
                     deleteOutput("output")
                     createFolders("output")
                     # add_image(st.session_state['final_title'])
-                    st.session_state['blog']=generate_blog(st.session_state['subtitles'], additional_info_blog)
+                    # content, introduction, conclusion
+                    st.session_state['blog'], introduction, conclusion=generate_blog(st.session_state['final_title'],st.session_state['subtitles'], additional_info_blog)
+                    print(st.session_state['blog'])
+                    print("INTRO", introduction)
+                    print("CONCLUSION", conclusion)
                     if(st.session_state['blog']):
                         unblock(5)
                         st.write('go to the last tab')
@@ -196,7 +204,7 @@ if not st.session_state['blocked_tab5']:
                     deleteOutput("output")
                     createFolders("output")
                     # add_image(st.session_state['final_title'])
-                    st.session_state['blog']=generate_blog( st.session_state['subtitles'])
+                    st.session_state['blog'], introduction, conclusion=generate_blog(st.session_state['final_title'],st.session_state['subtitles'], st.session_state['additional_info_blog'])
         blog_data = {
             'Title': st.session_state['final_title'], 
             'blog': st.session_state['blog'],  

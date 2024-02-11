@@ -36,19 +36,20 @@ Output Format:
 Output:
 
 """
-prompt_content="""
-Given the following subtitle of a blog, generate creative and catchy article content. 
+# prompt_content="""
+# Given the following subtitle of a blog, generate creative and catchy article content. 
 
-Blog subtitle :{}
+# Blog subtitle :{}
 
-Additional Info :{}
-
-The output response should be a text, without any additional text before or after it:
-
-Output:
+# Additional Info :{}
 
 
-"""
+# The output response should be a text, without any additional text before or after it:
+
+# Output:
+
+
+# """
 
 prompt_image="""
 Create an engaging and thematic image for a blog title The image should visually represent the core theme of the blog, incorporating relevant elements and symbols that align with the subject matter. 
@@ -65,15 +66,17 @@ Output:
 
 """
 # with history
-# prompt_content="""
-# You are article writer, you need to write arricle from given Main Title and also Subtitle, just craete the article content only from the given Subtitle by understnng the overall article structure from it.
-# Main Title:{}
-# Subtitle :{}
+prompt_content="""
+You are article writer, you need to write arricle from given Main Title and also Subtitle, just craete the article content only from the given Subtitle by understnng the overall article structure from it.
+Main Title:{}
+Subtitle :{}
 
-# Content Generated till now : 
-# {}
+Additional Info: {}
 
-# The output response should be a content for the above Subtitle, without any additional text before or after it:
+Content Generated till now : 
+{}
 
-# Output:
-# """
+The output response should be a content for the above Subtitle, without any additional text before or after it:
+
+Output:
+"""

@@ -177,33 +177,38 @@ def create_subtitles(title,additional_info):
         return result_list
     except Exception as e:
             print(f' Reason: {e}')
-def create_content_for_subtitles(subtitle, additional_info):
-    try:
-        prompt = prompt_content.format(subtitle, additional_info)
-        res=get_response_from_openai_gpt3_5(prompt)
-        print(res)
-        return res
-    except Exception as e:
-            print(f' Reason: {e}')
-
-# with history            
-# def create_content_for_subtitles(title,subtitle,history):
+# def create_content_for_subtitles(subtitle, additional_info):
 #     try:
-#         prompt = prompt_content.format(title,subtitle,history)
+#         prompt = prompt_content.format(subtitle, additional_info)
 #         res=get_response_from_openai_gpt3_5(prompt)
 #         print(res)
 #         return res
 #     except Exception as e:
 #             print(f' Reason: {e}')
+
+# with history            
+def create_content_for_subtitles(title,subtitle,history,additional_info):
+    try:
+#     try:
+        prompt = prompt_content.format(title,subtitle,history,additional_info)
+        res=get_response_from_openai_gpt3_5(prompt)
+        print(res)
+        return res
+    except Exception as e:
+            print(f' Reason: {e}')
     
 
-def generate_blog(subtitles,additional_info):
+def generate_blog(title,subtitles,additional_info):
     content = []
+    introduction = "introduction" # Create introduction from openai
+    history = ""
     for i in subtitles:
-        blog = create_content_for_subtitles(i,additional_info)
+        blog = create_content_for_subtitles(title,i,history,additional_info)
         x = { 'subtitle':i, 'text':blog}
+        history = history + "\n\n" + i + "\n\n" + blog + "\n\n"
         content.append(x)
-    return content
+    conclusion = "conclusion"
+    return content, introduction, conclusion
 
 # with history
     # content = []
