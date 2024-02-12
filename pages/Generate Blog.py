@@ -164,7 +164,7 @@ with tab1:
                     unblock(2)
                     st.session_state['unblocked_tab2_2'] = True
     if st.session_state.get('unblocked_tab2_1', False) or st.session_state.get('unblocked_tab2_2', False):
-        st.markdown("<h3 style='color:blue; txt-align:center; '>Go to tab 2</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color:blue; txt-align:center;'>Go to tab 2</h3>", unsafe_allow_html=True)
                
         
 
@@ -195,7 +195,8 @@ if not st.session_state['blocked_tab2']:
                         st.session_state['titles_10']=titles_10
                     if(titles_10):
                         unblock(3)
-                        st.write("Go to tab 3")
+                        st.markdown("<h3 style='color:blue; txt-align:center;'>Go to tab 3</h3>", unsafe_allow_html=True)
+
 
 
 if not st.session_state['blocked_tab3']:
@@ -215,7 +216,7 @@ if not st.session_state['blocked_tab3']:
                     st.session_state['subtitles']=create_subtitles(st.session_state['final_title'], additional_info_subtitles)
                     if(st.session_state['subtitles']):
                         unblock(4)
-                        st.write('go to tab4')
+                        st.markdown("<h3 style='color:blue; txt-align:center;'>Go to tab 4</h3>", unsafe_allow_html=True)
 
 if not st.session_state['blocked_tab4']:
     with tab4:
@@ -240,7 +241,8 @@ if not st.session_state['blocked_tab4']:
                     print("CONCLUSION", conclusion)
                     if(st.session_state['blog']):
                         unblock(5)
-                        st.write('go to the last tab')
+                        st.markdown("<h3 style='color:blue; txt-align:center;'>Go to tab 5</h3>", unsafe_allow_html=True)
+
 
 if not st.session_state['blocked_tab5']:
     with tab5:
