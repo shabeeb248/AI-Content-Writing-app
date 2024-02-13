@@ -17,7 +17,7 @@ from PIL import Image
 import json
 from prompts import *
 from utils import *
-# from setup import *
+from setup import *
 
 
 if 'keyword_input' not in st.session_state:
@@ -94,7 +94,6 @@ def unblock(tab):
     st.session_state['blocked_tab' + str(tab)] = False
 
 
-openai.api_key = "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"
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Step1", "Step 2", "Step 3", "Step 4", "Step 5"])
 
