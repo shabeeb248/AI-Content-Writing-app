@@ -76,6 +76,7 @@ def createFolders(dir):
 
 def generate_pdf(blog_data):
     print('generate pdf')
+    print(blog_data)
     output_folder = 'output'
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
@@ -103,8 +104,8 @@ def generate_pdf(blog_data):
             name='Title',
             fontSize=26,
             leading=24,  # Line spacing, adjust as needed
-            spaceAfter=60,  # Space after each paragraph, adjust as needed
-            spaceBefore=40,  # Space before each paragraph, adjust as needed
+            spaceAfter=15,  # Space after each paragraph, adjust as needed
+            spaceBefore=10,  # Space before each paragraph, adjust as needed
             alignment=1,  # Centered text
             fontName='Helvetica-Bold'
         )
@@ -114,7 +115,7 @@ def generate_pdf(blog_data):
         name='Subtitle',
         fontSize=17,
         spaceAfter=10,  # Space after each paragraph, adjust as needed
-        spaceBefore=20,  # Space before each paragraph, adjust as needed
+        spaceBefore=10,  # Space before each paragraph, adjust as needed
         fontName='Helvetica-Bold'
     )
 
@@ -123,8 +124,8 @@ def generate_pdf(blog_data):
         name='Content',
         fontSize=13,
         leading=20,  # Line spacing, adjust as needed
-        spaceAfter=60,  # Space after each paragraph, adjust as needed
-        spaceBefore=40,  # Space before each paragraph, adjust as needed
+        spaceAfter=5,  # Space after each paragraph, adjust as needed
+        spaceBefore=10,  # Space before each paragraph, adjust as needed
     )
     centered = ParagraphStyle(
         name="Centered",
@@ -141,13 +142,16 @@ def generate_pdf(blog_data):
 
     # Add title to the document
     text = blog_data["Title"]
-    story.append(Spacer(1, 1*inch))
+    # story.append(Spacer(1, 1*inch))
     paragraph = Paragraph(text, title_style)
     story.append(paragraph)
+    story.append(Spacer(1, 12))
+    introduction = Paragraph(blog_data['introduction'], content_style)
+    story.append(introduction)
     # image_path = f"output/img.jpg"
     # image = Image(image_path, width=350, height=350)  # Adjust the width and height as needed
     # story.append(image)
-    story.append(PageBreak())
+    # story.append(PageBreak())
     
 
     # Add subtitles and content to the document
@@ -157,7 +161,10 @@ def generate_pdf(blog_data):
         story.append(subtitle)
         story.append(content)
         story.append(Spacer(1, 12))  # Add spacing between subtitles
-        
+
+    story.append(Spacer(1, 12))
+    conclusion = Paragraph(blog_data['conclusion'], content_style)
+    story.append(conclusion)    
     # Build the PDF document
     doc.build(story)
     return ("PDF created successfully")
@@ -199,16 +206,28 @@ def create_content_for_subtitles(title,subtitle,history,additional_info):
             print(f' Reason: {e}')
     
 
+def generate_introduction(title,subtitles):
+    subtitles_as_string = ",".join(subtitles)
+    prompt = prompt_introduction.format(title,subtitles_as_string)
+    res = get_response_from_openai_gpt3_5(prompt)
+    return res
+
+def generate_conclusion(title,history):
+    prompt = prompt_conclusion.format(title,history)
+    res = get_response_from_openai_gpt3_5(prompt)
+    return res
+
+
 def generate_blog(title,subtitles,additional_info):
     content = []
-    introduction = "introduction" # Create introduction from openai
+    introduction = generate_introduction(title,subtitles)
     history = ""
     for i in subtitles:
         blog = create_content_for_subtitles(title,i,history,additional_info)
         x = { 'subtitle':i, 'text':blog}
         history = history + "\n\n" + i + "\n\n" + blog + "\n\n"
         content.append(x)
-    conclusion = "conclusion"
+    conclusion = generate_conclusion(title,history)
     return content, introduction, conclusion
 
 # with history

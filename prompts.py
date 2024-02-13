@@ -67,7 +67,7 @@ Output:
 """
 # with history
 prompt_content="""
-You are article writer, you need to write arricle from given Main Title and also Subtitle, just craete the article content only from the given Subtitle by understnng the overall article structure from it.
+You are article writer, you need to write an article section from given Main Title and also Subtitle, just craete the article content only from the given Subtitle by understnng the overall article structure from it.
 Main Title:{}
 Subtitle :{}
 
@@ -76,7 +76,32 @@ Additional Info: {}
 Content Generated till now : 
 {}
 
-The output response should be a content for the above Subtitle, without any additional text before or after it:
+The output response should be the article section without the title, without any additional text before or after it:
 
 Output:
 """
+
+prompt_introduction="""
+You are article writer, you need to write introduction to an article from given Main Title and also a list of subtitles.
+
+Main Title:{}
+Subtitles :{}
+
+
+The output response should be an introduction for the above Main Title, without any additional text before or after it:
+
+Output:
+"""
+
+prompt_conclusion = """
+You are an article writer, you need to write conclusion to an article from Title and content till now.
+
+Title: {}
+Content Till now: {}
+
+The output response should be a conclusion for the above Title, without any additional text before or after it:
+
+Output:
+
+"""
+

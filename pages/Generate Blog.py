@@ -89,13 +89,19 @@ if 'manual_input_visible' not in st.session_state:
 if 'google_search_full_data' not in st.session_state:
     st.session_state['google_search_full_data'] = None
 
+if 'introduction' not in st.session_state:
+    st.session_state['introduction'] = None
+
+if 'conclusion' not in st.session_state:
+    st.session_state['conclusion'] = None
+
 def unblock(tab):
     st.session_state['blocked_tab' + str(tab)] = False
 
 
 openai.api_key = "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"
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Step1", "Step 2", "Step 3", "Step 4", "Last Step"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Step1", "Step 2", "Step 3", "Step 4", "Step 5"])
 
 
 
@@ -235,10 +241,10 @@ if not st.session_state['blocked_tab4']:
                     createFolders("output")
                     # add_image(st.session_state['final_title'])
                     # content, introduction, conclusion
-                    st.session_state['blog'], introduction, conclusion=generate_blog(st.session_state['final_title'],st.session_state['subtitles'], additional_info_blog)
+                    st.session_state['blog'], st.session_state['introduction'], st.session_state['conclusion']=generate_blog(st.session_state['final_title'],st.session_state['subtitles'], additional_info_blog)
                     print(st.session_state['blog'])
-                    print("INTRO", introduction)
-                    print("CONCLUSION", conclusion)
+                    print("INTRO", st.session_state['conclusion'])
+                    # print("CONCLUSION", conclusion)
                     if(st.session_state['blog']):
                         unblock(5)
                         st.markdown("<h3 style='color:blue; txt-align:center;'>Go to tab 5</h3>", unsafe_allow_html=True)
@@ -249,14 +255,17 @@ if not st.session_state['blocked_tab5']:
         st.title('Last Step : Generate Blog')
         if st.session_state['subtitles']:
             if st.button('Regenerate Blog', key='regenerate_blog_button'):  
+                st.session_state['pdf_ready'] = False
                 with st.spinner('Generating...'):
                     deleteOutput("output")
                     createFolders("output")
                     # add_image(st.session_state['final_title'])
-                    st.session_state['blog'], introduction, conclusion=generate_blog(st.session_state['final_title'],st.session_state['subtitles'], st.session_state['additional_info_blog'])
+                    st.session_state['blog'], st.session_state['introduction'], st.session_state['conclusion']=generate_blog(st.session_state['final_title'],st.session_state['subtitles'], st.session_state['additional_info_blog'])
         blog_data = {
             'Title': st.session_state['final_title'], 
-            'blog': st.session_state['blog'],  
+            'blog': st.session_state['blog'],
+            'introduction':   st.session_state['introduction'],
+            'conclusion': st.session_state['conclusion']
         }
         # Add image path to blog_data
         # image_path = 'output/img.jpg'  # Adjust the image path as per your file structure
@@ -268,9 +277,12 @@ if not st.session_state['blocked_tab5']:
             # print(st.session_state["blog"])
             st.markdown(f"<h1 style='font-weight: bold; text-align:center;'>{st.session_state['final_title']}</h2>", unsafe_allow_html=True)
             # st.image('output/img.jpg',  use_column_width='always')
+            st.markdown(f"<div style='margin-left: 20px; margin-bottom: 20px;'>{st.session_state['introduction']}</div>", unsafe_allow_html=True)
             for i in st.session_state['blog']:
                 st.markdown(f"<h4 style='font-weight: 400;'>{i['subtitle']}</h4>", unsafe_allow_html=True)
                 st.markdown(f"<div style='margin-left: 20px; margin-bottom: 20px;'>{i['text']}</div>", unsafe_allow_html=True)
+            st.markdown(f"<div style='margin-left: 20px; margin-bottom: 20px;'>{st.session_state['conclusion']}</div>", unsafe_allow_html=True)
+
             if st.button("Generate PDF"):
                 st.session_state['generation_in_progress'] = True
                 with st.spinner('Generating...'):
