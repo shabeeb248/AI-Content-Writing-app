@@ -1,0 +1,301 @@
+{
+    "search_metadata": {
+        "id": "65c8c343797ac6ef10930f15",
+        "status": "Success",
+        "json_endpoint": "https://serpapi.com/searches/b5decfd8b0ba7959/65c8c343797ac6ef10930f15.json",
+        "created_at": "2024-02-11 12:53:23 UTC",
+        "processed_at": "2024-02-11 12:53:23 UTC",
+        "google_url": "https://www.google.com/search?q=Fresh+Bagels&oq=Fresh+Bagels&uule=w+CAIQICIqU2VhdHRsZS1UYWNvbWEsV0EsV2FzaGluZ3RvbixVbml0ZWQgU3RhdGVz&hl=en&gl=us&num=10&safe=active&start=10&sourceid=chrome&ie=UTF-8",
+        "raw_html_file": "https://serpapi.com/searches/b5decfd8b0ba7959/65c8c343797ac6ef10930f15.html",
+        "total_time_taken": 2.75
+    },
+    "search_parameters": {
+        "engine": "google",
+        "q": "Fresh Bagels",
+        "location_requested": "Seattle-Tacoma, WA, Washington, United States",
+        "location_used": "Seattle-Tacoma,WA,Washington,United States",
+        "google_domain": "google.com",
+        "hl": "en",
+        "gl": "us",
+        "safe": "active",
+        "start": 10,
+        "num": "10",
+        "device": "desktop"
+    },
+    "search_information": {
+        "query_displayed": "Fresh Bagels",
+        "total_results": 65000000,
+        "page_number": 2,
+        "time_taken_displayed": 0.46,
+        "organic_results_state": "Results for exact spelling"
+    },
+    "organic_results": [
+        {
+            "position": 1,
+            "title": "Where to find Seattle's best bagels",
+            "link": "https://www.axios.com/local/seattle/2023/01/11/seattles-best-bagels-ranked",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.axios.com/local/seattle/2023/01/11/seattles-best-bagels-ranked&ved=2ahUKEwiCu82sqqOEAxW2E1kFHdPaA904ChAWegQICRAB",
+            "displayed_link": "https://www.axios.com › Food and Drink",
+            "thumbnail": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd31a4e21669e17ceaa30a642fe0c6a4dbf1.jpeg",
+            "favicon": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd31f5e0eb9ef5814d1860d8d177df26bd11.png",
+            "date": "Jan 11, 2023",
+            "snippet": "Seattle's best bagels, ranked · 1. Bagel Oasis · 2. Little Market on Portage Bay · 3. Oxbow · 4. Loxsmith · 5. Old Salt Fish and Bagels.",
+            "snippet_highlighted_words": [
+                "best bagels"
+            ],
+            "sitelinks": {
+                "inline": [
+                    {
+                        "title": "1. Bagel Oasis",
+                        "link": "https://www.axios.com/local/seattle/2023/01/11/seattles-best-bagels-ranked#:~:text=1.%20Bagel%20Oasis"
+                    },
+                    {
+                        "title": "2. Little Market On Portage...",
+                        "link": "https://www.axios.com/local/seattle/2023/01/11/seattles-best-bagels-ranked#:~:text=2.%20Little%20Market%20on%20Portage%20Bay"
+                    },
+                    {
+                        "title": "3. Oxbow",
+                        "link": "https://www.axios.com/local/seattle/2023/01/11/seattles-best-bagels-ranked#:~:text=3.%20Oxbow"
+                    }
+                ]
+            },
+            "source": "Axios"
+        },
+        {
+            "position": 2,
+            "title": "THE BEST Bagels in Seattle (Updated February 2024)",
+            "link": "https://www.tripadvisor.com/Restaurants-g60878-zfd10740-Seattle_Washington-Bagels.html",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.tripadvisor.com/Restaurants-g60878-zfd10740-Seattle_Washington-Bagels.html&ved=2ahUKEwiCu82sqqOEAxW2E1kFHdPaA904ChAWegQIBxAB",
+            "displayed_link": "https://www.tripadvisor.com › ... › Seattle",
+            "thumbnail": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd31575e857422e18cfc037ac529d7461f99.jpeg",
+            "favicon": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd315baaf5d762a960fde86914cd386d5eb1.png",
+            "snippet": "Best Bagels in Seattle, Washington: Find 2600 Tripadvisor traveller reviews of THE BEST Bagels and search by price, location, and more.",
+            "snippet_highlighted_words": [
+                "Best Bagels",
+                "BEST Bagels"
+            ],
+            "source": "Tripadvisor"
+        },
+        {
+            "position": 3,
+            "title": "J. Kenji López-Alt says Seattle's bagels are as good as ...",
+            "link": "https://www.seattletimes.com/life/food-drink/j-kenji-lopez-alt-says-seattle-bagels-are-as-good-as-new-yorks-here-are-his-top-5/",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.seattletimes.com/life/food-drink/j-kenji-lopez-alt-says-seattle-bagels-are-as-good-as-new-yorks-here-are-his-top-5/&ved=2ahUKEwiCu82sqqOEAxW2E1kFHdPaA904ChAWegQICBAB",
+            "displayed_link": "https://www.seattletimes.com › Life › Food & Drink",
+            "thumbnail": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd3108b7dbfb79efdcce82a7bb1785b54324.jpeg",
+            "favicon": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd31a7b39106da701aae03c47dbda8efb5a2.png",
+            "date": "Jan 20, 2022",
+            "snippet": "J. Kenji López-Alt says Seattle's bagels are as good as New York's. Here are his top 5 · Rachel's Bagels & Burritos · Loxsmith Bagels · Rubinstein ...",
+            "snippet_highlighted_words": [
+                "bagels",
+                "Bagels",
+                "Bagels"
+            ],
+            "sitelinks": {
+                "inline": [
+                    {
+                        "title": "Rachel's Bagels & Burritos",
+                        "link": "https://www.seattletimes.com/life/food-drink/j-kenji-lopez-alt-says-seattle-bagels-are-as-good-as-new-yorks-here-are-his-top-5/#:~:text=Rachel%27s%20Bagels%20%26%20Burritos,-5451%20Leary%20Ave.%20N.W."
+                    },
+                    {
+                        "title": "Loxsmith Bagels",
+                        "link": "https://www.seattletimes.com/life/food-drink/j-kenji-lopez-alt-says-seattle-bagels-are-as-good-as-new-yorks-here-are-his-top-5/#:~:text=Loxsmith%20Bagels,-2709%2017th%20Ave.%20S."
+                    },
+                    {
+                        "title": "Rubinstein Bagels",
+                        "link": "https://www.seattletimes.com/life/food-drink/j-kenji-lopez-alt-says-seattle-bagels-are-as-good-as-new-yorks-here-are-his-top-5/#:~:text=Rubinstein%20Bagels,-403%2015th%20Ave.%20E"
+                    }
+                ]
+            },
+            "source": "The Seattle Times"
+        },
+        {
+            "position": 4,
+            "title": "THE BEST 10 Bagels in SEATTLE, WA",
+            "link": "https://www.yelp.com/search?cflt=bagels&find_loc=Seattle%2C+WA",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.yelp.com/search%3Fcflt%3Dbagels%26find_loc%3DSeattle%252C%2BWA&ved=2ahUKEwiCu82sqqOEAxW2E1kFHdPaA904ChAWegQIJBAB",
+            "displayed_link": "https://www.yelp.com › Yelp › Food › Bagels",
+            "thumbnail": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd3135942cde78a60ddeb121af4c2d807c54.jpeg",
+            "favicon": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd312497a1cc01effde9813a220597f4d863.png",
+            "snippet": "Top 10 Best Bagels in Seattle, WA - February 2024 - Yelp - Mt Bagel, Zylberschtein's Delicatessen & Bakery, Blazing Bagels, Old Salt Fish and Bagels, ...",
+            "snippet_highlighted_words": [
+                "Best Bagels"
+            ],
+            "source": "Yelp"
+        },
+        {
+            "position": 5,
+            "title": "Bagelbop",
+            "link": "https://www.bagelbop.com/",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.bagelbop.com/&ved=2ahUKEwiCu82sqqOEAxW2E1kFHdPaA904ChAWegQIIhAB",
+            "displayed_link": "https://www.bagelbop.com",
+            "thumbnail": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd31fc52b935feb9711093bb8ff2595b15f9.jpeg",
+            "favicon": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd319bb25f8e838a56b9c488be85795c2fb0.png",
+            "snippet": "With our fresh bagels from Seattle Bagel Bakery and fresh salmon each morning. With cream cheese, onions, and capers for that authentic lox sandwich flavor!",
+            "snippet_highlighted_words": [
+                "fresh bagels"
+            ],
+            "source": "Bagelbop"
+        },
+        {
+            "position": 6,
+            "title": "Homemade Bagels Recipe",
+            "link": "https://sallysbakingaddiction.com/homemade-bagels/",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://sallysbakingaddiction.com/homemade-bagels/&ved=2ahUKEwiCu82sqqOEAxW2E1kFHdPaA904ChAWegQIJRAB",
+            "displayed_link": "https://sallysbakingaddiction.com › Recipes › Bread",
+            "thumbnail": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd31b035be60bb2a09c7b5404ee19daed68e.jpeg",
+            "favicon": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd317cf26d39ba1fc3b32b1fbaa227f3c423.png",
+            "date": "Jan 1, 2019",
+            "snippet": "Make fresh bagels right at home with this tested dough recipe. Don't ... The moisture from fresh blueberries is too much for the bagel dough.",
+            "snippet_highlighted_words": [
+                "fresh bagels"
+            ],
+            "rich_snippet": {
+                "bottom": {
+                    "detected_extensions": {
+                        "rating": 4.9,
+                        "reviews": 569,
+                        "hr": 3
+                    },
+                    "extensions": [
+                        "Rating: 4.9",
+                        "569 reviews",
+                        "3 hr"
+                    ]
+                }
+            },
+            "source": "Sally's Baking Addiction"
+        },
+        {
+            "position": 7,
+            "title": "Whole Wheat Bagels - Made with Organic Flour",
+            "link": "https://www.onemightymill.com/collections/one-mighty-milled-whole-wheat-bagels",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.onemightymill.com/collections/one-mighty-milled-whole-wheat-bagels&ved=2ahUKEwiCu82sqqOEAxW2E1kFHdPaA904ChAWegQIIRAB",
+            "displayed_link": "https://www.onemightymill.com › collections › one-m...",
+            "favicon": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd3105a7c81cd3dd98ea8a528abf3e9e2cf1.png",
+            "snippet": "Plump cherries and cranberries, local organic honey, and a drizzle of fresh espresso round out our dreamy Valentines bagel. ✨Every Mighty Chocolate BAE-gel ...",
+            "snippet_highlighted_words": [
+                "fresh",
+                "bagel"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {
+                        "price": 1,
+                        "currency": "Free – day delivery over $"
+                    },
+                    "extensions": [
+                        "Free 1–4 day delivery over $49"
+                    ]
+                }
+            },
+            "source": "One Mighty Mill"
+        },
+        {
+            "position": 8,
+            "title": "Bagels (4-pack)",
+            "link": "https://seattlesfavorite.com/product-category/bagels/",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://seattlesfavorite.com/product-category/bagels/&ved=2ahUKEwiCu82sqqOEAxW2E1kFHdPaA904ChAWegQIJhAB",
+            "displayed_link": "https://seattlesfavorite.com › product-category › bagels",
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDQoff-PKx5AJHJLzPQkvn7KN2-2UI-C-3Oemq1FPQUFZdx7I0cZv&usqp=CAE&s",
+            "favicon": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd31854fcd4a3eccaae1478f4c646aff3c65.png",
+            "snippet": "Fresh bagels mixed from scratch using only the finest ingredients and steam-baked. Sold individually wrapped in packs of 4. (Does not include cream cheese).",
+            "snippet_highlighted_words": [
+                "Fresh bagels"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {
+                        "free_day_delivery": 2
+                    },
+                    "extensions": [
+                        "Free 2–6 day delivery"
+                    ]
+                }
+            },
+            "source": "seattlesfavorite.com"
+        },
+        {
+            "position": 9,
+            "title": "Order New York City Bagels",
+            "link": "https://www.newyorkerbagels.com/products/new-york-bagels",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.newyorkerbagels.com/products/new-york-bagels&ved=2ahUKEwiCu82sqqOEAxW2E1kFHdPaA904ChAWegQIIxAB",
+            "displayed_link": "https://www.newyorkerbagels.com › Collections › All",
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQguOWiRbjY3iWBfQX2g75UEylM7HcIB3fFG9CikjeNxWjJsTBarxBe&usqp=CAE&s",
+            "favicon": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd31a92eaa63b78f620ea4ba9c18800a58ae.png",
+            "snippet": "Build your own assortment of New York City Bagels! Shipped fresh with free 2-day shipping.",
+            "snippet_highlighted_words": [
+                "Bagels",
+                "fresh"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {
+                        "rating": 4.8,
+                        "price": 29.5,
+                        "currency": " $",
+                        "day_delivery": 1
+                    },
+                    "extensions": [
+                        "Rating: 4.8",
+                        "‎ $29.50",
+                        "‎ 1–5 day delivery"
+                    ]
+                }
+            },
+            "source": "New Yorker Bagels"
+        },
+        {
+            "position": 10,
+            "title": "Bagels - Pastries & Bakery: Grocery & Gourmet Food",
+            "link": "https://www.amazon.com/Bagels/b?ie=UTF8&node=18770265011",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.amazon.com/Bagels/b%3Fie%3DUTF8%26node%3D18770265011&ved=2ahUKEwiCu82sqqOEAxW2E1kFHdPaA904ChAWegQIKRAB",
+            "displayed_link": "https://www.amazon.com › Bagels",
+            "favicon": "https://serpapi.com/searches/65c8c343797ac6ef10930f15/images/43cb5fddef47c29b25bbed968767bd31fd419bb0c6f3a2421f0813a7d0768805.png",
+            "snippet": "Fresh · THOMAS' · Under $10 · Amazon Brands · Gluten Free. Filters (1). Results. Check ... Plain Bagels - 40 packs of individually wrapped bagels - 40 total ...",
+            "snippet_highlighted_words": [
+                "Fresh",
+                "Bagels",
+                "bagels"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {
+                        "seller_rating_k": 4.6,
+                        "unknown": 30
+                    },
+                    "extensions": [
+                        "4.6seller rating (2.1K)",
+                        "‎ 30",
+                        "day returns"
+                    ]
+                }
+            },
+            "source": "Amazon"
+        }
+    ],
+    "pagination": {
+        "current": 2,
+        "next": "https://www.google.com/search?q=Fresh+Bagels&oq=Fresh+Bagels&hl=en&gl=us&num=10&safe=active&start=20&sourceid=chrome&ie=UTF-8",
+        "previous": "https://www.google.com/search?q=Fresh+Bagels&oq=Fresh+Bagels&hl=en&gl=us&num=10&safe=active&start=0&sourceid=chrome&ie=UTF-8",
+        "other_pages": {
+            "1": "https://www.google.com/search?q=Fresh+Bagels&oq=Fresh+Bagels&hl=en&gl=us&num=10&safe=active&start=0&sourceid=chrome&ie=UTF-8",
+            "3": "https://www.google.com/search?q=Fresh+Bagels&oq=Fresh+Bagels&hl=en&gl=us&num=10&safe=active&start=20&sourceid=chrome&ie=UTF-8",
+            "4": "https://www.google.com/search?q=Fresh+Bagels&oq=Fresh+Bagels&hl=en&gl=us&num=10&safe=active&start=30&sourceid=chrome&ie=UTF-8",
+            "5": "https://www.google.com/search?q=Fresh+Bagels&oq=Fresh+Bagels&hl=en&gl=us&num=10&safe=active&start=40&sourceid=chrome&ie=UTF-8"
+        }
+    },
+    "serpapi_pagination": {
+        "current": 2,
+        "previous_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle-Tacoma%2C+WA%2C+Washington%2C+United+States&num=10&q=Fresh+Bagels&safe=active&start=0",
+        "previous": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle-Tacoma%2C+WA%2C+Washington%2C+United+States&num=10&q=Fresh+Bagels&safe=active&start=0",
+        "next_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle-Tacoma%2C+WA%2C+Washington%2C+United+States&num=10&q=Fresh+Bagels&safe=active&start=20",
+        "next": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle-Tacoma%2C+WA%2C+Washington%2C+United+States&num=10&q=Fresh+Bagels&safe=active&start=20",
+        "other_pages": {
+            "1": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle-Tacoma%2C+WA%2C+Washington%2C+United+States&num=10&q=Fresh+Bagels&safe=active&start=0",
+            "3": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle-Tacoma%2C+WA%2C+Washington%2C+United+States&num=10&q=Fresh+Bagels&safe=active&start=20",
+            "4": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle-Tacoma%2C+WA%2C+Washington%2C+United+States&num=10&q=Fresh+Bagels&safe=active&start=30",
+            "5": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle-Tacoma%2C+WA%2C+Washington%2C+United+States&num=10&q=Fresh+Bagels&safe=active&start=40"
+        }
+    }
+}

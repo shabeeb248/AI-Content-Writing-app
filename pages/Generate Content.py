@@ -18,8 +18,8 @@ import json
 from prompts import *
 from utils import *
 
-openai.api_key = "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"
-os.environ['OPENAI_API_KEY'] = "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"
+openai.api_key = OPENAI_API_KEY
+os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
 #https://zenserp.com/thank-you-Free/
 client = openai

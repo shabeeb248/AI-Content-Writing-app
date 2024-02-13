@@ -32,8 +32,17 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, PageTemplate, Image
 from reportlab.lib.styles import getSampleStyleSheet
 from prompts import *
 import string
+from setup import *
 
+
+
+openai.api_key = OPENAI_API_KEY
+os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
+
+#https://zenserp.com/thank-you-Free/
 client = openai
+
+
 
 def randomString():
     N = 5
@@ -273,7 +282,7 @@ def get_titles_based_on_keyword(prompt_in,main_key,sub_key):
 
 def get_google_serach(key_word):
     headers = { 
-    "apikey": "c200c400-c4b8-11ee-b984-31f4e259c81c"}
+    "apikey": SERP_API_KEY}
 
     params = (
     ("q",key_word),
