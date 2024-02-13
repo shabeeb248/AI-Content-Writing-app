@@ -19,10 +19,6 @@ from prompts import *
 from utils import *
 from setup import *
 
-openai.api_key = OPENAI_API_KEY
-os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
-
-client = openai
 
 if 'keyword_input' not in st.session_state:
   st.session_state["keyword_input"]=''
