@@ -17,7 +17,7 @@ from PIL import Image
 import json
 from prompts import *
 from utils import *
-from setup import *
+# from setup import *
 
 
 if 'keyword_input' not in st.session_state:
