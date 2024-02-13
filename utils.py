@@ -345,23 +345,9 @@ def get_google_serach(key_word):
     headers = { 
     "apikey": SERP_API_KEY}
 
-    params = {
-    "engine": "google",
-    "q": key_word,
-    "api_key": SERP_API_KEY
-    }
+    params = (
+    ("q",key_word),
+    ("location","New York,New York,United States"),)
 
-    results = GoogleSearch(params)
-    # print(search)
-    # results = search
-    results =results.get_dict()
-    # save the results to a file
-    # with open('results.json', 'w') as f:
-    #     json.dump(results, f)
-    # make results a dictionary
-    # results = json.loads(results)
-    # print(results.keys())
-    organic_results = results["organic_results"]
-    # print(organic_results)
-
-    return results
+    response = requests.get('https://app.zenserp.com/api/v2/search', headers=headers, params=params)
+    return response.text
