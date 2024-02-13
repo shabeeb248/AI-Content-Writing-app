@@ -38,7 +38,7 @@ from serpapi import GoogleSearch
 
 
 openai.api_key = OPENAI_API_KEY
-# os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
+os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
 #https://zenserp.com/thank-you-Free/
 client = openai
@@ -342,12 +342,26 @@ def get_titles_based_on_keyword(prompt_in,main_key,sub_key,additional_info):
 #     return response.text
 
 def get_google_serach(key_word):
-    headers = { 
-    "apikey": SERP_API_KEY}
 
-    params = (
-    ("q",key_word),
-    ("location","New York,New York,United States"),)
+    print("SERP",SERP_API_KEY)
+    params = {
+    "engine": "google",
+    "q": key_word,
+    "api_key": SERP_API_KEY
+    }
 
-    response = requests.get('https://app.zenserp.com/api/v2/search', headers=headers, params=params)
-    return response.text
+    results = GoogleSearch(params)
+    # print(search)
+    # results = search
+    results =results.get_dict()
+    print(results)
+    # save the results to a file
+    # with open('results.json', 'w') as f:
+    #     json.dump(results, f)
+    # make results a dictionary
+    # results = json.loads(results)
+    # print(results.keys())
+    # organic_results = results["organic_results"]
+    # print(organic_results)
+
+    return results

@@ -142,9 +142,9 @@ with tab1:
                 #     if 'title' in item:
                 #         google_keywords.append(item['title'])
 
-            for search in data['related_searches']:
-                if 'title' in search:
-                    google_keywords.append(search['title'])
+            # for search in data['related_searches']:
+            #     if 'title' in search:
+            #         google_keywords.append(search['title'])
             
             st.session_state['google_keywords'].extend(list(dict.fromkeys(google_keywords)))
             print("GOOGLE KEYWORDS", st.session_state['google_keywords'])
