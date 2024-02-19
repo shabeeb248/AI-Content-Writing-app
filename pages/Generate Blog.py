@@ -158,8 +158,9 @@ with tab1:
             if st.button("Add"):
                 if 'google_keywords' not in st.session_state:
                     st.session_state['google_keywords'] = []
-                st.session_state['google_keywords'].append(st.session_state['manual_input'])
-                st.success(f"Keyword '{st.session_state['manual_input']}' added")
+                if st.session_state['manual_input'] not in st.session_state['google_keywords']:
+                    st.session_state['google_keywords'].append(st.session_state['manual_input'])
+                    st.success(f"Keyword '{st.session_state['manual_input']}' added")
                 if st.session_state['google_keywords'] and not st.session_state.get('unblocked_tab2_2', False):  
                     unblock(2)
                     st.session_state['unblocked_tab2_2'] = True
